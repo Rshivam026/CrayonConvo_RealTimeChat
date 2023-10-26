@@ -29,21 +29,23 @@ const Homepage = () => {
        display="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        // bg="white"
         w="100%"
         m="40px 0 15px 0"
-        borderRadius="1rem"
-        borderWidth="1px"
+        // borderRadius="1rem"
+        // borderWidth="1px"
+        background="transparent"
       >
-        <Text fontSize="4xl" fontFamily="Concert One">
-          <Center>CrayonConvo</Center>
+        <Text fontSize="5xl" fontFamily="Concert One" color="black">
+          <Center>Crayon-Convo</Center>
+          <Center><Text fontSize="sm">The perfect chat webApp</Text></Center>
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box color="black" w="100%" p={4} borderRadius="3xl" borderWidth="1px" bgOpacity="5%" background="white">
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+            <Tab color="black" fontSize="1.4rem">Login</Tab>
+            <Tab color="black" fontSize="1.4rem">Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

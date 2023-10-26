@@ -7,6 +7,7 @@ import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
+import { Text } from '@chakra-ui/react'
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -72,16 +73,18 @@ const Login = () => {
 
   return (
     <VStack spacing="10px">
-      <FormControl id="email" isRequired>
+      <Text fontSize='1xl' fontFamily="Quicksand" as='b'> Enter your Email and password to login</Text>
+      <FormControl id="email" isRequired color="black">
         <FormLabel>Email Address</FormLabel>
         <Input
           value={email}
           type="email"
+          _placeholder={{ opacity: 0.7, color: 'black' }}
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
-      <FormControl id="password" isRequired>
+      <FormControl id="password" isRequired> 
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">
           <Input
@@ -89,6 +92,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             type={show ? "text" : "password"}
             placeholder="Enter password"
+            _placeholder={{ opacity: 0.7, color: 'black' }}
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -98,11 +102,12 @@ const Login = () => {
         </InputGroup>
       </FormControl>
       <Button
-        colorScheme="blue"
+        colorScheme="green"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={loading}
+        borderRadius="2xl"
       >
         Login
       </Button>
@@ -110,6 +115,7 @@ const Login = () => {
         variant="solid"
         colorScheme="red"
         width="100%"
+        borderRadius="2xl"
         onClick={() => {
           setEmail("guest@example.com");
           setPassword("123456");

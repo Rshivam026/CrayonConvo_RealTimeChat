@@ -131,10 +131,12 @@ const Signup = () => {
 
   return (
     <VStack spacing="5px">
+      
       <FormControl id="first-name" isRequired>
         <FormLabel>Name</FormLabel>
         <Input
           placeholder="Enter Your Name"
+          _placeholder={{ opacity: 0.7, color: 'white' }}
           onChange={(e) => setName(e.target.value)}
         />
       </FormControl>
@@ -142,6 +144,7 @@ const Signup = () => {
         <FormLabel>Email Address</FormLabel>
         <Input
           type="email"
+          _placeholder={{ opacity: 0.7, color: 'black' }}
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -151,6 +154,8 @@ const Signup = () => {
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
+          _placeholder={{ opacity: 0.7, color: 'black' }}
+
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -166,7 +171,8 @@ const Signup = () => {
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
-            placeholder="Confirm password"
+          _placeholder={{ opacity: 0.7, color: 'white' }}
+          placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
@@ -177,7 +183,7 @@ const Signup = () => {
         </InputGroup>
       </FormControl>
       <FormControl id="pic">
-        <FormLabel>Upload your Picture</FormLabel>
+        <FormLabel color="white">Upload your Picture</FormLabel>
         <Input
           type="file"
           p={1.5}
@@ -191,6 +197,7 @@ const Signup = () => {
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={picLoading}
+        borderRadius="2xl"
       >
         Sign Up
       </Button>
